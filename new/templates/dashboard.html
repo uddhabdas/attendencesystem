@@ -1692,27 +1692,6 @@
             }
         }
         
-        function setupEventListeners() {
-            // SECTIONS is already an array, so we can use it directly
-            const sectionsArray = SECTIONS;
-            
-            // Section selection is now handled by radio button event listeners in loadSections()
-            
-            // Manual section selection
-            const manualSectionSelect = document.getElementById('manualSectionSelect');
-            if (manualSectionSelect) {
-                manualSectionSelect.addEventListener('change', function() {
-                    const sectionId = this.value;
-                    if (sectionId) {
-                        // Populate student dropdown based on selected section
-                        const selectedSection = sectionsArray.find(s => s.id === sectionId);
-                        if (selectedSection) {
-                            populateManualStudentSelect(selectedSection);
-                        }
-                    }
-                });
-            }
-            
         // Function to handle section change from radio buttons
         function handleSectionChange(sectionId) {
             if (!sectionId) return;
@@ -1739,6 +1718,27 @@
                 loadAttendanceData();
             }
         }
+        
+        function setupEventListeners() {
+            // SECTIONS is already an array, so we can use it directly
+            const sectionsArray = SECTIONS;
+            
+            // Section selection is now handled by radio button event listeners in loadSections()
+            
+            // Manual section selection
+            const manualSectionSelect = document.getElementById('manualSectionSelect');
+            if (manualSectionSelect) {
+                manualSectionSelect.addEventListener('change', function() {
+                    const sectionId = this.value;
+                    if (sectionId) {
+                        // Populate student dropdown based on selected section
+                        const selectedSection = sectionsArray.find(s => s.id === sectionId);
+                        if (selectedSection) {
+                            populateManualStudentSelect(selectedSection);
+                        }
+                    }
+                });
+            }
             
             // Start session
             document.getElementById('startSession').addEventListener('click', function() {
