@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - AI Attendance System | GIET University</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        :root {
+            --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --secondary-gradient: linear-gradient(90deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        body {
+            background: var(--primary-gradient);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .login-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem 2.5rem;
+            border-radius: 25px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 480px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 2;
+            transform: translateY(0);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .login-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .university-logo {
+            width: 80px;
+            height: 80px;
+            background: var(--secondary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .university-logo i {
+            font-size: 2.5rem;
+            color: white;
+        }
+        
+        .login-header h2 {
+            color: #667eea;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-size: 2rem;
+        }
+        
+        .login-header p {
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+        
+        .form-control {
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            padding: 1rem 1.25rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(248, 249, 250, 0.8);
+        }
+        
+        .form-control:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+            background: white;
+            transform: translateY(-2px);
+        }
+        
+        .form-label {
+            font-weight: 600;
+            color: #495057;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+        
+        .input-group {
+            position: relative;
+        }
+        
+        .input-group-text {
+            background: transparent;
+            border: 2px solid #e9ecef;
+            border-right: none;
+            border-radius: 12px 0 0 12px;
+        }
+        
+        .btn-login {
+            background: var(--primary-gradient);
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-login:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-login::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-login:hover::before {
+            left: 100%;
+        }
+        
+        .alert {
+            border-radius: 12px;
+            border: none;
+            padding: 1rem 1.25rem;
+            font-weight: 500;
+        }
+        
+        .demo-accordion .accordion-button {
+            border-radius: 12px;
+            font-weight: 600;
+            background: rgba(102, 126, 234, 0.1);
+            border: none;
+        }
+        
+        .demo-accordion .accordion-button:not(.collapsed) {
+            background: rgba(102, 126, 234, 0.2);
+            color: #667eea;
+            box-shadow: none;
+        }
+        
+        .demo-accordion .accordion-body {
+            background: rgba(248, 249, 250, 0.8);
+            border-radius: 0 0 12px 12px;
+        }
+        
+        .credential-badge {
+            background: rgba(102, 126, 234, 0.1);
+            border: 1px solid rgba(102, 126, 234, 0.2);
+            border-radius: 8px;
+            padding: 0.5rem 0.75rem;
+            margin: 0.25rem 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .floating-icon {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+        
+        /* Responsive design */
+        @media (max-width: 576px) {
+            .login-container {
+                margin: 1rem;
+                padding: 2rem 1.5rem;
+            }
+            
+            .login-header h2 {
+                font-size: 1.75rem;
+            }
+            
+            .university-logo {
+                width: 70px;
+                height: 70px;
+            }
+            
+            .university-logo i {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Loading animation */
+        .loading-spinner {
+            display: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s ease-in-out infinite;
+            margin-right: 10px;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating background icons -->
+    <div class="floating-icons">
+        <i class="bi bi-camera-video floating-icon" style="top: 10%; left: 10%; animation-delay: 0s;"></i>
+        <i class="bi bi-person-check floating-icon" style="top: 20%; right: 15%; animation-delay: 1s;"></i>
+        <i class="bi bi-clock-history floating-icon" style="bottom: 30%; left: 15%; animation-delay: 2s;"></i>
+        <i class="bi bi-graph-up floating-icon" style="bottom: 20%; right: 10%; animation-delay: 3s;"></i>
+        <i class="bi bi-database floating-icon" style="top: 40%; left: 20%; animation-delay: 4s;"></i>
+    </div>
+
+    <div class="login-container animate__animated animate__fadeInUp">
+        <div class="login-header">
+            <div class="university-logo">
+                <i class="bi bi-mortarboard"></i>
+            </div>
+            <h2>🔐 Faculty Authentication</h2>
+            <p>AI-Powered Attendance System | GIET University</p>
+        </div>
+        
+        <form id="loginForm">
+            <div class="mb-4">
+                <label for="username" class="form-label">👤 Username</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-person"></i></span>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your faculty ID" required>
+                </div>
+            </div>
+            
+            <div class="mb-4">
+                <label for="password" class="form-label">🔒 Password</label>
+                <div class="input-group">
+                    <span class="input-group-text"><i class="bi bi-lock"></i></span>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+            </div>
+            
+            <button type="submit" class="btn btn-login mb-4">
+                <span class="loading-spinner" id="loginSpinner"></span>
+                <span id="loginText">🚀 Login to Dashboard</span>
+            </button>
+        </form>
+        
+        <div class="alert alert-danger mt-3 animate__animated animate__fadeIn" id="errorAlert" style="display: none;">
+            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+            <span id="errorMessage"></span>
+        </div>
+        
+        <div class="accordion demo-accordion mt-4">
+            <div class="accordion-item border-0">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#demoCredentials">
+                        <i class="bi bi-key me-2"></i> Demo Credentials
+                    </button>
+                </h2>
+                <div id="demoCredentials" class="accordion-collapse collapse" data-bs-parent="#demoAccordion">
+                    <div class="accordion-body">
+                        <strong>Available Demo Accounts:</strong>
+                        <div class="mt-2">
+                            <div class="credential-badge">
+                                <strong>Faculty:</strong> <code>dr.smith</code> / <code>teacher123</code>
+                            </div>
+                            <div class="credential-badge">
+                                <strong>Faculty:</strong> <code>prof.johnson</code> / <code>teacher456</code>
+                            </div>
+                            <div class="credential-badge">
+                                <strong>Admin:</strong> <code>admin</code> / <code>admin@123</code>
+                            </div>
+                            <div class="credential-badge">
+                                <strong>HOD:</strong> <code>hod.cse</code> / <code>hod2024</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4 pt-3 border-top">
+            <small class="text-muted">
+                <i class="bi bi-shield-check me-1"></i>
+                Secure Authentication System
+            </small>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorAlert = document.getElementById('errorAlert');
+            const errorMessage = document.getElementById('errorMessage');
+            const loginSpinner = document.getElementById('loginSpinner');
+            const loginText = document.getElementById('loginText');
+            
+            // Hide previous errors
+            errorAlert.style.display = 'none';
+            
+            // Show loading state
+            loginSpinner.style.display = 'inline-block';
+            loginText.textContent = 'Authenticating...';
+            
+            try {
+                const formData = new FormData();
+                formData.append('username', username);
+                formData.append('password', password);
+                
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // Success animation
+                    document.querySelector('.login-container').classList.add('animate__tada');
+                    setTimeout(() => {
+                        window.location.href = data.redirect;
+                    }, 1000);
+                } else {
+                    // Show error with animation
+                    errorMessage.textContent = data.message;
+                    errorAlert.style.display = 'block';
+                    errorAlert.classList.add('animate__shakeX');
+                    
+                    // Reset loading state
+                    loginSpinner.style.display = 'none';
+                    loginText.textContent = '🚀 Login to Dashboard';
+                }
+            } catch (error) {
+                errorMessage.textContent = 'Network error. Please try again.';
+                errorAlert.style.display = 'block';
+                errorAlert.classList.add('animate__shakeX');
+                
+                // Reset loading state
+                loginSpinner.style.display = 'none';
+                loginText.textContent = '🚀 Login to Dashboard';
+            }
+        });
+
+        // Remove animation classes after they complete
+        document.getElementById('errorAlert').addEventListener('animationend', function() {
+            this.classList.remove('animate__shakeX');
+        });
+
+        document.querySelector('.login-container').addEventListener('animationend', function() {
+            this.classList.remove('animate__tada');
+        });
+
+        // Add focus effects
+        const inputs = document.querySelectorAll('.form-control');
+        inputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focus');
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.classList.remove('focus');
+            });
+        });
+    </script>
+</body>
+</html>

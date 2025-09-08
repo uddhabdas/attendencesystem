@@ -1,0 +1,150 @@
+{
+  "CSE_DS": {
+    "Monday": [
+      {"subject": "Data Structures", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Python Programming", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Database Systems", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Statistics for Data Science", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Tuesday": [
+      {"subject": "Machine Learning Basics", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Data Visualization", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Algorithm Design", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Big Data Technologies", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Wednesday": [
+      {"subject": "Data Mining", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Statistical Computing", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Deep Learning", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Data Structures Lab", "time": "1:00 PM - 3:00 PM"}
+    ],
+    "Thursday": [
+      {"subject": "Natural Language Processing", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Computer Vision", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Ethics in AI", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Python Lab", "time": "1:00 PM - 3:00 PM"}
+    ],
+    "Friday": [
+      {"subject": "Cloud Computing", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Data Warehousing", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Business Intelligence", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Project Work", "time": "1:00 PM - 3:00 PM"}
+    ],
+    "Saturday": [
+      {"subject": "Soft Skills", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Technical Writing", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Industry Lecture", "time": "11:15 AM - 12:15 PM"}
+    ]
+  },
+  "CSEAIML_A": {
+    "Monday": [
+      {"subject": "Artificial Intelligence", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Machine Learning", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Neural Networks", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Data Structures", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Tuesday": [
+      {"subject": "Deep Learning", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Computer Vision", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Natural Language Processing", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Reinforcement Learning", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Wednesday": [
+      {"subject": "AI Ethics", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Robotics", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Speech Recognition", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "AI Lab", "time": "1:00 PM - 3:00 PM"}
+    ],
+    "Thursday": [
+      {"subject": "Cognitive Computing", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Knowledge Representation", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Expert Systems", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "ML Lab", "time": "1:00 PM - 3:00 PM"}
+    ],
+    "Friday": [
+      {"subject": "Evolutionary Algorithms", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Fuzzy Logic", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Neural Networks", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Project Work", "time": "1:00 PM - 3:00 PM"}
+    ],
+    "Saturday": [
+      {"subject": "Research Methodology", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Technical Paper Writing", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Industry Lecture", "time": "11:15 AM - 12:15 PM"}
+    ]
+  },
+  "CSEAIML_B": {
+    "Monday": [
+      {"subject": "Machine Learning", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Artificial Intelligence", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Data Structures", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Neural Networks", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Tuesday": [
+      {"subject": "Computer Vision", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Deep Learning", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Reinforcement Learning", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Natural Language Processing", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Wednesday": [
+      {"subject": "Robotics", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "AI Ethics", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "AI Lab", "time": "11:15 AM - 1:15 PM"},
+      {"subject": "Speech Recognition", "time": "1:30 PM - 2:30 PM"}
+    ],
+    "Thursday": [
+      {"subject": "Knowledge Representation", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Cognitive Computing", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "ML Lab", "time": "11:15 AM - 1:15 PM"},
+      {"subject": "Expert Systems", "time": "1:30 PM - 2:30 PM"}
+    ],
+    "Friday": [
+      {"subject": "Fuzzy Logic", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Evolutionary Algorithms", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Project Work", "time": "11:15 AM - 1:15 PM"},
+      {"subject": "Neural Networks", "time": "1:30 PM - 2:30 PM"}
+    ],
+    "Saturday": [
+      {"subject": "Technical Paper Writing", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Research Methodology", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Industry Lecture", "time": "11:15 AM - 12:15 PM"}
+    ]
+  },
+  "CSEAIML_C": {
+    "Monday": [
+      {"subject": "Neural Networks", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Data Structures", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Artificial Intelligence", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Machine Learning", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Tuesday": [
+      {"subject": "Reinforcement Learning", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Natural Language Processing", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Deep Learning", "time": "11:15 AM - 12:15 PM"},
+      {"subject": "Computer Vision", "time": "1:00 PM - 2:00 PM"}
+    ],
+    "Wednesday": [
+      {"subject": "Speech Recognition", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "AI Lab", "time": "10:00 AM - 12:00 PM"},
+      {"subject": "AI Ethics", "time": "12:15 PM - 1:15 PM"},
+      {"subject": "Robotics", "time": "1:30 PM - 2:30 PM"}
+    ],
+    "Thursday": [
+      {"subject": "Expert Systems", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "ML Lab", "time": "10:00 AM - 12:00 PM"},
+      {"subject": "Cognitive Computing", "time": "12:15 PM - 1:15 PM"},
+      {"subject": "Knowledge Representation", "time": "1:30 PM - 2:30 PM"}
+    ],
+    "Friday": [
+      {"subject": "Neural Networks", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Project Work", "time": "10:00 AM - 12:00 PM"},
+      {"subject": "Evolutionary Algorithms", "time": "12:15 PM - 1:15 PM"},
+      {"subject": "Fuzzy Logic", "time": "1:30 PM - 2:30 PM"}
+    ],
+    "Saturday": [
+      {"subject": "Industry Lecture", "time": "9:00 AM - 10:00 AM"},
+      {"subject": "Research Methodology", "time": "10:00 AM - 11:00 AM"},
+      {"subject": "Technical Paper Writing", "time": "11:15 AM - 12:15 PM"}
+    ]
+  }
+}

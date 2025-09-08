@@ -1,0 +1,66 @@
+{
+  "CSE_DS": {
+    "2024-07-07": {
+      "23CSEDS1": {
+        "attended": 3,
+        "total": 4
+      },
+      "23CSEDS2": {
+        "attended": 4,
+        "total": 4
+      },
+      "23CSEDS3": {
+        "attended": 2,
+        "total": 4
+      }
+    }
+  },
+  "CSEAIML_A": {
+    "2024-07-07": {
+      "23CSEAIML1": {
+        "attended": 3,
+        "total": 4
+      },
+      "23CSEAIML2": {
+        "attended": 4,
+        "total": 4
+      },
+      "23CSEAIML3": {
+        "attended": 2,
+        "total": 4
+      }
+    }
+  },
+  "CSEAIML_B": {
+    "2024-07-07": {
+      "23CSEAIML65": {
+        "attended": 3,
+        "total": 4
+      },
+      "23CSEAIML66": {
+        "attended": 4,
+        "total": 4
+      },
+      "23CSEAIML67": {
+        "attended": 2,
+        "total": 4
+      }
+    }
+  },
+  "CSEAIML_C": {
+    "2024-07-07": {
+      "23CSEAIML129": {
+        "attended": 3,
+        "total": 4
+      },
+      "23CSEAIML130": {
+        "attended": 4,
+        "total": 4
+      },
+      "23CSEAIML131": {
+        "attended": 2,
+        "total": 4
+      }
+    }
+  }
+}
